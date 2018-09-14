@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:vm="clr-namespace:XamarinTemplate.ViewModels"
+             xmlns:local="clr-namespace:XamarinTemplate.Views"
+             x:Class="XamarinTemplate.Views.MainPage"
+             BackgroundImage="{Binding BackgroundImage}">
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <local:Navbar/>
+            <ScrollView>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="Welcome to Yustan J Xamarin.Forms!"
+                HorizontalOptions="CenterAndExpand" TextColor="{StaticResource TextColorOutSide}"/>
+                    <controls:CircleImage Aspect="AspectFill" Source="{Binding Picture}" HorizontalOptions="Center" HeightRequest="150" WidthRequest="150">
+                        <controls:CircleImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CameraSelector}"/>
+                        </controls:CircleImage.GestureRecognizers>
+                    </controls:CircleImage>
+                    <Button Text="Save Data" Command="{Binding SaveData}"/>
+                    <Button Text="Load Data" Command="{Binding LoadData}"/>
+                    <Button Text="Call API" Command="{Binding CallApi}"/>
+                    <Button Text="Show Message" Command="{Binding ShowMessage}"/>
+                    <Button Text="Show Map" Command="{Binding ShowMap}"/>
+                    <Button Text="Scan" Command="{Binding Scan}"/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages:PopupPage NavigationPage.HasNavigationBar="False"
+             xmlns:Pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinTemplate.Views.PopUpPage">
+    <Pages:PopupPage.Content>
+        <Frame BackgroundColor="White" CornerRadius="5" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Margin="20,75,20,20">
+            <StackLayout x:Name="container" Margin="20"/>
+        </Frame>
+    </Pages:PopupPage.Content>
+</Pages:PopupPage>
